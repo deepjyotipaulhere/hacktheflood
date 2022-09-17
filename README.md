@@ -1,3 +1,3 @@
-# hacktheflood
+# Flood Quest
 
-HackZurich 2022 Project
+Rescue people and make your way through the flood
