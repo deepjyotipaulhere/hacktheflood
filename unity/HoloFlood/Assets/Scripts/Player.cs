@@ -21,10 +21,13 @@ public class Player : MonoBehaviour
         Physics.Raycast(_camera.transform.position, _camera.transform.forward, out hit, maxDistance);
         if (hit.collider){
             Human other = hit.collider.gameObject.GetComponent<Human>();
-            if (other){
-                if (other.CompareTag("Human") && other != _lookingAt){
-                    _lookingAt = other.GetComponent<Human>();
-                    _lookingAt.Select();
+            // Debug.Log(_lookingAt);
+            // Debug.Log(other);
+            if (other != null){
+                if (_lookingAt == null || other.GetInstanceID() != _lookingAt.GetInstanceID()){
+                    Debug.Log("is new human");
+                    _lookingAt = other;
+                    other.Select();
                 }
             }
         } else if (_lookingAt){

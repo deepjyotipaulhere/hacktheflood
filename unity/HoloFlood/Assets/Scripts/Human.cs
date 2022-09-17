@@ -12,14 +12,21 @@ public class Human : MonoBehaviour
     private int _currentTargetIdx;
     private Player _player;
     private ParticleSystem _particlesSelected;
+    private ParticleSystem _particlesCollision;
 
     private HumanState state = HumanState.Stop;
 
     void Start()
     {
         _player = GameObject.Find("MRTK XR Rig").GetComponent<Player>();
-        _particlesSelected = GetComponentInChildren<ParticleSystem>();
-
+        foreach (Transform eachChild in transform) {
+            if (eachChild.name == "ParticlesSelected") {
+                 _particlesSelected = eachChild.GetComponentInChildren<ParticleSystem>();
+            }
+            if (eachChild.name == "ParticlesCollision") {
+                 _particlesCollision = eachChild.GetComponentInChildren<ParticleSystem>();
+            }
+        }
         _points = PathContainer.GetComponentsInChildren<Transform>();
         transform.position = _points[0].position;
     }
@@ -47,6 +54,13 @@ public class Human : MonoBehaviour
                 _currentTargetIdx++;
             }
             transform.position = Vector3.MoveTowards(transform.position, _points[_currentTargetIdx].position, speed * Time.deltaTime);
+        }
+    }
+    
+    void OnTriggerEnter(Collider collision){
+        if (collision.gameObject.CompareTag("Human")){
+            state = HumanState.Stop;
+            _particlesCollision.Play();
         }
     }
 }
