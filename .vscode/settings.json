@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/689a7187-275f-4413-98fc-7b29488db19e/resourceGroups/appsvc_linux_centralus_premium/providers/Microsoft.Web/sites/hacktheflood",
+    "appService.deploySubpath": "floodapi"
+}

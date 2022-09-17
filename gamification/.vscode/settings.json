@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/689a7187-275f-4413-98fc-7b29488db19e/AppServices/subscriptions/689a7187-275f-4413-98fc-7b29488db19e/resourceGroups/gamify-hacktheflood2/providers/Microsoft.Web/sites/gamify-hacktheflood2",
+    "appService.deploySubpath": "."
+}
