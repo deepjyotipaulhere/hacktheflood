@@ -6,7 +6,10 @@ public enum HumanState {Come, Go, Stop};
 
 public class Human : MonoBehaviour
 {
-    public float speed = 0.1f;
+    public float speed = 0.001f;
+    public Transform PathContainer;
+    private Transform[] _points;
+    private int _currentTargetIdx;
     private Player _player;
     private ParticleSystem _particlesSelected;
 
@@ -16,6 +19,9 @@ public class Human : MonoBehaviour
     {
         _player = GameObject.Find("MRTK XR Rig").GetComponent<Player>();
         _particlesSelected = GetComponentInChildren<ParticleSystem>();
+
+        _points = PathContainer.GetComponentsInChildren<Transform>();
+        transform.position = _points[0].position;
     }
 
     public void Select(){
@@ -34,9 +40,13 @@ public class Human : MonoBehaviour
         float dist = Time.deltaTime * speed;
 
         if (state == HumanState.Come){
-            transform.position = Vector3.MoveTowards(transform.position, _player.transform.position, dist);
-        } else if (state == HumanState.Go){
-            transform.position += (transform.position - _player.transform.position).normalized * dist;
+            
+            if (_points == null || _points.Length == 0) return;
+            var distance = Vector3.Distance(transform.position, _points[_currentTargetIdx].position);
+            if (Mathf.Abs(distance) < 0.05f){
+                _currentTargetIdx++;
+            }
+            transform.position = Vector3.MoveTowards(transform.position, _points[_currentTargetIdx].position, speed * Time.deltaTime);
         }
     }
 }

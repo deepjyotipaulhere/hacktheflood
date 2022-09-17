@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
 
-    public float maxDistance = 20;
+    public float maxDistance = 100;
 
     private Camera _camera;
     private Human _lookingAt;
@@ -31,10 +31,8 @@ public class Player : MonoBehaviour
             _lookingAt.Unselect();
             _lookingAt = null;
         }
-
-        // Get hand position
-        // var handRay = InputRayUtils.TryGetHand();
     }
+
     private void Update(){
         if (_lookingAt){
             if (Input.GetKeyDown("1")){
