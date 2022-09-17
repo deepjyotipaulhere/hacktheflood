@@ -1,2 +1,10 @@
 unity/Builds/
 */venv/*
+unity/HoloFlood/Assets/XR/Settings/OpenXR Package Settings.asset
+unity/HoloFlood/Packages/packages-lock.json
+unity/HoloFlood/Assets/XR/Settings/OpenXR Package Settings.asset
+unity/HoloFlood/ProjectSettings/ProjectVersion.txt
+unity/HoloFlood/Assets/XR/Settings/OpenXR Package Settings.asset
+unity/HoloFlood/Packages/packages-lock.json
+unity/HoloFlood/ProjectSettings/ProjectSettings.asset
+unity/HoloFlood/ProjectSettings/ProjectVersion.txt
