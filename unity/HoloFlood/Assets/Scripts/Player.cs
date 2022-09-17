@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
     private Camera _camera;
     private Human _lookingAt;
 
+    private HumanState _currentCommand = HumanState.Stop;
+
     void Start()
     {
         _camera = GetComponentInChildren<Camera>();
@@ -21,13 +23,11 @@ public class Player : MonoBehaviour
         Physics.Raycast(_camera.transform.position, _camera.transform.forward, out hit, maxDistance);
         if (hit.collider){
             Human other = hit.collider.gameObject.GetComponent<Human>();
-            // Debug.Log(_lookingAt);
-            // Debug.Log(other);
             if (other != null){
                 if (_lookingAt == null || other.GetInstanceID() != _lookingAt.GetInstanceID()){
-                    Debug.Log("is new human");
                     _lookingAt = other;
                     other.Select();
+                    other.ChangeState(_currentCommand);
                 }
             }
         } else if (_lookingAt){
@@ -36,15 +36,30 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void Update(){
+    // private void Update(){
+    //     if (_lookingAt){
+    //         if (Input.GetKeyDown("1")){
+    //             _lookingAt.ChangeState(HumanState.Come);
+    //         } else if (Input.GetKeyDown("2")){
+    //             _lookingAt.ChangeState(HumanState.Stop);
+    //         } else if (Input.GetKeyDown("3")){
+    //             _lookingAt.ChangeState(HumanState.Go);
+    //         }
+    //     }
+    // }
+
+    public void OnPalmUp(){
+        _currentCommand = HumanState.Come;
         if (_lookingAt){
-            if (Input.GetKeyDown("1")){
-                _lookingAt.ChangeState(HumanState.Come);
-            } else if (Input.GetKeyDown("2")){
-                _lookingAt.ChangeState(HumanState.Stop);
-            } else if (Input.GetKeyDown("3")){
-                _lookingAt.ChangeState(HumanState.Go);
-            }
+            _lookingAt.ChangeState(_currentCommand);
         }
     }
+
+    public void OnPalmDown(){
+        _currentCommand = HumanState.Go;
+        if (_lookingAt){
+            _lookingAt.ChangeState(HumanState.Stop);
+        }
+    }
+
 }

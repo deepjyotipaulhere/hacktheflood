@@ -6,7 +6,7 @@ public enum HumanState {Come, Go, Stop};
 
 public class Human : MonoBehaviour
 {
-    public float speed = 0.001f;
+    public float speed = 0.0001f;
     public Transform PathContainer;
     private Transform[] _points;
     private int _currentTargetIdx;
@@ -50,7 +50,7 @@ public class Human : MonoBehaviour
             
             if (_points == null || _points.Length == 0) return;
             var distance = Vector3.Distance(transform.position, _points[_currentTargetIdx].position);
-            if (Mathf.Abs(distance) < 0.05f){
+            if (Mathf.Abs(distance) < 0.05f && _currentTargetIdx < _points.Length - 1){
                 _currentTargetIdx++;
             }
             transform.position = Vector3.MoveTowards(transform.position, _points[_currentTargetIdx].position, speed * Time.deltaTime);
