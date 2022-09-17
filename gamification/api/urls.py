@@ -11,4 +11,5 @@ router.register("points", PointsView, basename='points')
 
 urlpatterns=[
     path("", include(router.urls)),
+    # path("leaderboard", leaderboard, name='leaderboard')
 ]

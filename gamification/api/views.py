@@ -2,6 +2,8 @@ from django.shortcuts import render
 from rest_framework import viewsets
 from .models import Objects,Points,User
 from .serializers import ObjectsSerializers,PointsSerializers,UserSerializer
+from rest_framework.decorators import api_view
+from  rest_framework.response import Response
 # Create your views here.
 
 class UserView(viewsets.ModelViewSet):
@@ -14,4 +16,4 @@ class ObjectsView(viewsets.ModelViewSet):
 
 class PointsView(viewsets.ModelViewSet):
     serializer_class=PointsSerializers
-    queryset=Points.objects.all()
+    queryset=Points.objects.all().order_by("-points")

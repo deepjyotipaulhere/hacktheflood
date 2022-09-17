@@ -10,4 +10,4 @@ class Objects(models.Model):
 
 class Points(models.Model):
     user=models.ForeignKey(to=User, on_delete=models.CASCADE)
-    points=models.IntegerField(max_length=10)
+    points=models.IntegerField()

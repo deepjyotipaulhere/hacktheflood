@@ -24,9 +24,9 @@ environ.Env.read_env()
 SECRET_KEY = 'django-insecure-zca4z0(q0popj5+deb6egif1y!)k$%8=bcl-dd8=m6ppl*&p6r'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env("DEBUG")=="1"
 
-ALLOWED_HOSTS = ['gamify-hacktheflood2.azurewebsites.net']
+ALLOWED_HOSTS = ['gamify-hacktheflood2.azurewebsites.net','localhost']
 
 
 # Application definition
