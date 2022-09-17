@@ -35,20 +35,10 @@ public class Player : MonoBehaviour
             _lookingAt = null;
         }
     }
-
-    // private void Update(){
-    //     if (_lookingAt){
-    //         if (Input.GetKeyDown("1")){
-    //             _lookingAt.ChangeState(HumanState.Come);
-    //         } else if (Input.GetKeyDown("2")){
-    //             _lookingAt.ChangeState(HumanState.Stop);
-    //         } else if (Input.GetKeyDown("3")){
-    //             _lookingAt.ChangeState(HumanState.Go);
-    //         }
-    //     }
-    // }
-
+    
     public void OnPalmUp(){
+        // var game = GameObject.Find("Game").GetComponent<Game>();
+        // game.TakePhoto();
         _currentCommand = HumanState.Come;
         if (_lookingAt){
             _lookingAt.ChangeState(_currentCommand);

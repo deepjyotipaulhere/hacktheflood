@@ -6,7 +6,6 @@ public class PalmDownAction : MonoBehaviour
 {
     public Player player;
     public void OnPalmDown(){
-        Debug.Log("Stop");
         player.OnPalmDown();
     }
 }
