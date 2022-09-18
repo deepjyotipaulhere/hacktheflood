@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, jsonify
 from flask_cors import CORS
 import requests
 
@@ -11,7 +11,11 @@ def hello():
 
 @app.route("/flood", methods=['POST'])
 def flood():
-    prompt_text="this room is fully flooded. many waves and water."
+    prompt_text=None
+    try:
+        prompt_text=request.form["prompt"]
+    except:
+        prompt_text="this room is fully flooded. many waves and water."
     strength=0.8
     file=None
     if 'file' in request.files:
@@ -20,7 +24,7 @@ def flood():
         'prompt': prompt_text,
         'strength': strength
     })
-    print(response.text)
+    return jsonify({"data":"data:image/png;base64,"+response.json()['images'][0]})
 
 
 if __name__=='__main__':
