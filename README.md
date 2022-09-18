@@ -17,7 +17,7 @@ One of the ways to prepare yourself is to put yourself in the situation repetiti
 
 What if there were to be a sudden flash flood in the Technopark right now? 😱
 
-##What it does
+## What it does
 
 We have created a virtual reality game that works on Hololens. The object of the game is to save as many objects as you can from the incoming floodwaters. The interface is gamified with a varied point system. With the VR experience, a good playing environment and gamification rules, we hope people use the game often and thus train themselves for emergency situations.
 How we built it
