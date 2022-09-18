@@ -3,7 +3,7 @@ Properties {
 
 	_BaseColor ("Base color", COLOR)  = ( .54, .95, .99, 0.5) 
 	_SpecColor ("Specular Material Color", Color) = (1,1,1,1) 
-    _Shininess ("Shininess", Float) = 1
+    _Shininess ("Shininess", Float) = 10
 	_ShoreTex ("Shore & Foam texture ", 2D) = "black" {} 
 	 
 	_InvFadeParemeter ("Auto blend parameter (Edge, Shore, Distance scale)", Vector) = (0.2 ,0.39, 0.5, 1.0)

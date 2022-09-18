@@ -1,0 +1,97 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &101100000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: IgnoreFeet
+  m_Mask: 00000000010000000100000000000000000000000100000001000000010000000100000000000000000000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: basic_rig
+    m_Weight: 1
+  - m_Path: basic_rig/basic_rig Pelvis
+    m_Weight: 1
+  - m_Path: basic_rig/basic_rig Pelvis/basic_rig L Thigh
+    m_Weight: 1
+  - m_Path: basic_rig/basic_rig Pelvis/basic_rig L Thigh/basic_rig L Calf
+    m_Weight: 1
+  - m_Path: basic_rig/basic_rig Pelvis/basic_rig L Thigh/basic_rig L Calf/basic_rig
+      L Foot
+    m_Weight: 1
+  - m_Path: basic_rig/basic_rig Pelvis/basic_rig L Thigh/basic_rig L Calf/basic_rig
+      L Foot/basic_rig L Toe0
+    m_Weight: 1
+  - m_Path: basic_rig/basic_rig Pelvis/basic_rig R Thigh
+    m_Weight: 1
+  - m_Path: basic_rig/basic_rig Pelvis/basic_rig R Thigh/basic_rig R Calf
+    m_Weight: 1
+  - m_Path: basic_rig/basic_rig Pelvis/basic_rig R Thigh/basic_rig R Calf/basic_rig
+      R Foot
+    m_Weight: 1
+  - m_Path: basic_rig/basic_rig Pelvis/basic_rig R Thigh/basic_rig R Calf/basic_rig
+      R Foot/basic_rig R Toe0
+    m_Weight: 1
+  - m_Path: basic_rig/basic_rig Pelvis/basic_rig Spine
+    m_Weight: 1
+  - m_Path: basic_rig/basic_rig Pelvis/basic_rig Spine/basic_rig Spine1
+    m_Weight: 1
+  - m_Path: basic_rig/basic_rig Pelvis/basic_rig Spine/basic_rig Spine1/basic_rig
+      L Clavicle
+    m_Weight: 1
+  - m_Path: basic_rig/basic_rig Pelvis/basic_rig Spine/basic_rig Spine1/basic_rig
+      L Clavicle/basic_rig L UpperArm
+    m_Weight: 1
+  - m_Path: basic_rig/basic_rig Pelvis/basic_rig Spine/basic_rig Spine1/basic_rig
+      L Clavicle/basic_rig L UpperArm/basic_rig L Forearm
+    m_Weight: 1
+  - m_Path: basic_rig/basic_rig Pelvis/basic_rig Spine/basic_rig Spine1/basic_rig
+      L Clavicle/basic_rig L UpperArm/basic_rig L Forearm/basic_rig L Hand
+    m_Weight: 1
+  - m_Path: basic_rig/basic_rig Pelvis/basic_rig Spine/basic_rig Spine1/basic_rig
+      L Clavicle/basic_rig L UpperArm/basic_rig L Forearm/basic_rig L Hand/basic_rig
+      L Finger0
+    m_Weight: 1
+  - m_Path: basic_rig/basic_rig Pelvis/basic_rig Spine/basic_rig Spine1/basic_rig
+      L Clavicle/basic_rig L UpperArm/basic_rig L Forearm/basic_rig L Hand/basic_rig
+      L Finger1
+    m_Weight: 1
+  - m_Path: basic_rig/basic_rig Pelvis/basic_rig Spine/basic_rig Spine1/basic_rig
+      L Clavicle/basic_rig L UpperArm/basic_rig L Forearm/basic_rig L Hand/basic_rig
+      L Finger2
+    m_Weight: 1
+  - m_Path: basic_rig/basic_rig Pelvis/basic_rig Spine/basic_rig Spine1/basic_rig
+      Neck
+    m_Weight: 1
+  - m_Path: basic_rig/basic_rig Pelvis/basic_rig Spine/basic_rig Spine1/basic_rig
+      Neck/basic_rig Head
+    m_Weight: 1
+  - m_Path: basic_rig/basic_rig Pelvis/basic_rig Spine/basic_rig Spine1/basic_rig
+      R Clavicle
+    m_Weight: 1
+  - m_Path: basic_rig/basic_rig Pelvis/basic_rig Spine/basic_rig Spine1/basic_rig
+      R Clavicle/basic_rig UpperArm
+    m_Weight: 1
+  - m_Path: basic_rig/basic_rig Pelvis/basic_rig Spine/basic_rig Spine1/basic_rig
+      R Clavicle/basic_rig UpperArm/basic_rig R Forearm
+    m_Weight: 1
+  - m_Path: basic_rig/basic_rig Pelvis/basic_rig Spine/basic_rig Spine1/basic_rig
+      R Clavicle/basic_rig UpperArm/basic_rig R Forearm/basic_rig R Hand
+    m_Weight: 1
+  - m_Path: basic_rig/basic_rig Pelvis/basic_rig Spine/basic_rig Spine1/basic_rig
+      R Clavicle/basic_rig UpperArm/basic_rig R Forearm/basic_rig R Hand/basic_rig
+      R Finger0
+    m_Weight: 1
+  - m_Path: basic_rig/basic_rig Pelvis/basic_rig Spine/basic_rig Spine1/basic_rig
+      R Clavicle/basic_rig UpperArm/basic_rig R Forearm/basic_rig R Hand/basic_rig
+      R Finger1
+    m_Weight: 1
+  - m_Path: basic_rig/basic_rig Pelvis/basic_rig Spine/basic_rig Spine1/basic_rig
+      R Clavicle/basic_rig UpperArm/basic_rig R Forearm/basic_rig R Hand/basic_rig
+      R Finger2
+    m_Weight: 1
+  - m_Path: M_male1
+    m_Weight: 1

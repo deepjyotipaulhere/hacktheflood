@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54362ffe0e21a5d4a9e425f34380e935, type: 3}
+  m_Name: Mobile_Supervisor_B_C_AppearanceObject
+  m_EditorClassIdentifier: 
+  m_model: {fileID: 7747369093661789352, guid: 80e323f5fcc529b428bfc456271c157d, type: 3}

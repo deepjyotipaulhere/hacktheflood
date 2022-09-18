@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1017986767848986184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5408497392640224009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b040736da90200d469616062cbbd8ea4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_useBothHands: 0
+  m_preferredHand: 0
+  m_itemType: 3
+  m_dummyPoint: {fileID: 5408497392640456495}
+  m_itemAnimations: {fileID: 11400000, guid: 8754b8e5d757f144f9159310cf4871f2, type: 2}
+  m_accessoryLogic: {fileID: 0}
+  m_flipXForHand: 0
+  m_flipYForHand: 0
+  m_flipZForHand: 0
+--- !u!1001 &5408497392640322987
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 100002, guid: 6fc53253dbfa641478cfc830b94f1eed, type: 3}
+      propertyPath: m_Name
+      value: PropellingPencil1_Red_WithItemLogic
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 6fc53253dbfa641478cfc830b94f1eed, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 6fc53253dbfa641478cfc830b94f1eed, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 6fc53253dbfa641478cfc830b94f1eed, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 6fc53253dbfa641478cfc830b94f1eed, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.000000021855694
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 6fc53253dbfa641478cfc830b94f1eed, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 6fc53253dbfa641478cfc830b94f1eed, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 6fc53253dbfa641478cfc830b94f1eed, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 6fc53253dbfa641478cfc830b94f1eed, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 6fc53253dbfa641478cfc830b94f1eed, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 6fc53253dbfa641478cfc830b94f1eed, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 6fc53253dbfa641478cfc830b94f1eed, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 6fc53253dbfa641478cfc830b94f1eed, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a97e7b2a1cc82c24a8d19bb4d77b1b37, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6fc53253dbfa641478cfc830b94f1eed, type: 3}
+--- !u!1 &5408497392640224009 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100002, guid: 6fc53253dbfa641478cfc830b94f1eed,
+    type: 3}
+  m_PrefabInstance: {fileID: 5408497392640322987}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5408497392640456495 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400004, guid: 6fc53253dbfa641478cfc830b94f1eed,
+    type: 3}
+  m_PrefabInstance: {fileID: 5408497392640322987}
+  m_PrefabAsset: {fileID: 0}
