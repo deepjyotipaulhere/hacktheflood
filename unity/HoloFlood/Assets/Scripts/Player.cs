@@ -38,8 +38,6 @@ public class Player : MonoBehaviour
     }
     
     public void OnPalmUp(){
-        // var game = GameObject.Find("Game").GetComponent<Game>();
-        // game.TakePhoto();
         _currentCommand = HumanState.Go;
         if (_lookingAt){
             _lookingAt.ChangeState(_currentCommand);

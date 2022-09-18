@@ -6,7 +6,7 @@ public enum HumanState {Go, Stop};
 
 public class Human : MonoBehaviour
 {
-    private float speed = 1.25f;
+    private float speed = 2.3f;
 
     [ SerializeField ]
     private GameObject[] _templates;
@@ -64,7 +64,7 @@ public class Human : MonoBehaviour
         } else if (newState == HumanState.Go){
             _animator.Play("Movement");
             if (stepsAudio){
-                stepsAudio.Play();
+                // stepsAudio.Play();
             }
         }
     }
@@ -115,7 +115,7 @@ public class Human : MonoBehaviour
         
         stepsAudio = GetComponent<AudioSource>();
         _state = HumanState.Go;
-        stepsAudio.volume = Random.Range(0.05f, 0.1f);
+        stepsAudio.volume = Random.Range(0.02f, 0.2f);
         stepsAudio.time = Random.Range(0f, 0.5f);
         stepsAudio.pitch = Random.Range(0.9f, 1.1f);
         stepsAudio.Play();

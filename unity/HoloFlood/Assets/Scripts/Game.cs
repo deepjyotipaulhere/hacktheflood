@@ -12,11 +12,11 @@ using UnityEngine.UI;
 
 public class Game : MonoBehaviour {
 
-    private float floodSpeed = 0.02f;
+    private float floodSpeed = 0.05f;
     private float floodMax = 1.9f;
     private float floodCurrent = 0f;
 
-    private float secondWave = 19f;
+    private float secondWave = 30f;
     public GameObject prefabHuman;
     public MeshRenderer canvas;
 
@@ -38,12 +38,17 @@ public class Game : MonoBehaviour {
         flood = GameObject.Find("Flood").GetComponent<Transform>();
     }
 
-    void Spawn(){
+    void Spawn(int num = 8){    
+
         var humans = GameObject.Find("Humans").GetComponent<Transform>();
 
         // Create a human on each path
         var pths = GameObject.Find("Paths");
+        int i = 0;
         foreach (Transform path in pths.GetComponentInChildren<Transform>()) {
+            if (i > num-1){
+                break;
+            }
             // Vector3 pos = path.GetChild(0).transform.position;
             var human = Instantiate(prefabHuman, humans);
             human.GetComponent<Human>().SetPath(path);
@@ -180,7 +185,7 @@ public class Game : MonoBehaviour {
 
         secondWave -= Time.deltaTime;
         if (secondWave < 0){
-            Spawn();
+            Spawn(4);
             secondWave = 60f;
         }
         floodCurrent += Time.deltaTime * floodSpeed;
