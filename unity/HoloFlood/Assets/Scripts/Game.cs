@@ -13,7 +13,7 @@ using UnityEngine.UI;
 public class Game : MonoBehaviour {
 
     private float floodSpeed = 0.05f;
-    private float floodMax = 1.9f;
+    private float floodMax = 2.5f;
     private float floodCurrent = 0f;
 
     private float secondWave = 30f;
