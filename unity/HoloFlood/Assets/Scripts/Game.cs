@@ -5,11 +5,66 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Windows.WebCam;
 using UnityEngine.Networking;
+using System;
+using TMPro;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Game : MonoBehaviour {
+
+    private float floodSpeed = 0.02f;
+    private float floodMax = 1.9f;
+    private float floodCurrent = 0f;
+
+    private float secondWave = 19f;
+    public GameObject prefabHuman;
     public MeshRenderer canvas;
+
+    public GameObject textScore;
+    public GameObject textCollisions;
+    private Transform flood;
+
+    public int score = 0;
+
+    public Image intro;
+    private float introCountdown = 3f;
+
+    public int numCollisions = 0;
     public string backendURL = "https://hacktheflood.azurewebsites.net/flood";
     private PhotoCapture photoCaptureObject = null;
+
+    void Start(){
+        Spawn();
+        flood = GameObject.Find("Flood").GetComponent<Transform>();
+    }
+
+    void Spawn(){
+        var humans = GameObject.Find("Humans").GetComponent<Transform>();
+
+        // Create a human on each path
+        var pths = GameObject.Find("Paths");
+        foreach (Transform path in pths.GetComponentInChildren<Transform>()) {
+            // Vector3 pos = path.GetChild(0).transform.position;
+            var human = Instantiate(prefabHuman, humans);
+            human.GetComponent<Human>().SetPath(path);
+        }
+    }
+
+    public void AddScore(){
+        score += 1;
+        if (textScore.GetComponent<TextMeshPro>() != null){
+            textScore.GetComponent<TextMeshPro>().text = score.ToString();
+        }
+    }
+
+    public void AddCollision(){
+        numCollisions += 1;
+        if (textCollisions.GetComponent<TextMeshPro>() != null){
+            textCollisions.GetComponent<TextMeshPro>().text = numCollisions.ToString();
+        }
+    }
+
+    // Taking a photo and diffusing an alternate flooded reality
     public void TakePhoto(){
         PhotoCapture.CreateAsync(false, OnPhotoCaptureCreated);
     }
@@ -87,7 +142,6 @@ public class Game : MonoBehaviour {
             tex.LoadImage(b64_bytes);
             canvas.material.mainTexture = tex;
         }
-        Debug.Log("all done");
     }
 
     public Texture2D CropTexture(Texture2D texture, Vector2 crop, int x = 0, int y = 0) {
@@ -116,6 +170,24 @@ public class Game : MonoBehaviour {
 
     void Update()
     {
-        
+        float after = introCountdown - Time.deltaTime;
+        if (introCountdown > 0 && after < 0){
+            intro.color = new Color(0, 0, 0, 0);
+        } else if (after > 0){
+            intro.color = new Color(1, 1, 1, 1f - (after / 6f));
+        }
+        introCountdown = after;
+
+        secondWave -= Time.deltaTime;
+        if (secondWave < 0){
+            Spawn();
+            secondWave = 60f;
+        }
+        floodCurrent += Time.deltaTime * floodSpeed;
+        flood.position = new Vector3(0, floodCurrent, 0);
+        if (floodCurrent > floodMax){
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
     }
 }

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-
     public float maxDistance = 100;
 
     private Camera _camera;
@@ -12,8 +11,7 @@ public class Player : MonoBehaviour
 
     private HumanState _currentCommand = HumanState.Stop;
 
-    void Start()
-    {
+    void Start(){
         _camera = GetComponentInChildren<Camera>();
     }
  
@@ -25,6 +23,9 @@ public class Player : MonoBehaviour
             Human other = hit.collider.gameObject.GetComponent<Human>();
             if (other != null){
                 if (_lookingAt == null || other.GetInstanceID() != _lookingAt.GetInstanceID()){
+                    if (_lookingAt != null){
+                        _lookingAt.Unselect();
+                    }
                     _lookingAt = other;
                     other.Select();
                     other.ChangeState(_currentCommand);
@@ -39,7 +40,7 @@ public class Player : MonoBehaviour
     public void OnPalmUp(){
         // var game = GameObject.Find("Game").GetComponent<Game>();
         // game.TakePhoto();
-        _currentCommand = HumanState.Come;
+        _currentCommand = HumanState.Go;
         if (_lookingAt){
             _lookingAt.ChangeState(_currentCommand);
         }
