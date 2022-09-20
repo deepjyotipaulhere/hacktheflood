@@ -1,5 +1,11 @@
 # Unity AR App
 
+## This app will not run
+
+You will need this paid asset from the store, then put the mobile prefabs into the Human script.
+
+https://assetstore.unity.com/packages/3d/characters/humanoids/character-pack-office-workers-179532
+
 ## Setup HoloLens dev on Windows
 
 It's not fun.
